@@ -1,0 +1,13 @@
+# app/views/users/show.html.erb
+
+<div class="profile row">
+  <div class="col-md-4 avatar">
+
+  </div>
+
+  <div class="col-md-8 basic-info">
+
+  </div>
+</div>
+
+

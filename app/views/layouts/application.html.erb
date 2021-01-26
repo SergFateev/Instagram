@@ -27,7 +27,11 @@
 	  <a><i class="fa fa-compass"></i></a>
 	  <a><i class="fa fa-heart"></i></a>
 	  <% if user_signed_in? %>
+<<<<<<< HEAD
 	  <a href="<%= new_user_session_path%>">
+=======
+	  <a href="<%= user_path(current_user) %>">
+>>>>>>> develop
 	    <i class="fa fa-user"></i>
 	  </a>
 	  <% else %>
