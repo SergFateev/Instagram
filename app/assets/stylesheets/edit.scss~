@@ -1,0 +1,10 @@
+.user-edit-page{
+    display: flex;
+    margin-top: 60px;
+    min-heigth: 500px;
+
+    .actions{
+	width: 220px;
+	border: 1px solid;
+    }
+}
