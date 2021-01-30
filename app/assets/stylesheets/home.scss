@@ -1,3 +1,15 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form-group{
+    border: 1px solid #dbdbdb;
+    height: auto;
+    margin: 50px 160px;
+    padding: 30px;
+    border-radius: 3px;
+
+    input[type='text']{
+	width: 100%;
+    }
+}
