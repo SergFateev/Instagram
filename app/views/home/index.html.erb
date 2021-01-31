@@ -7,9 +7,9 @@
 
 <div class="form-group" >
   <%= f.file_field :image %>
-</div>
-<!--
-<div class="form-group" >
+</div> 
+
+<!--<div class="form-group" >
   <%= f.text_field :user_id, value: current_user.id, class:"d_none" %>
 </div> -->
 
@@ -18,5 +18,25 @@
 <div class="text-center">
   <%= f.submit 'Create Post', class: 'btn btn-primary' %>
 </div>
+
+<div class="posts">
+  <% @posts.each do |p| %>
+  <section class="post" >
+    <div class="user">
+    <div class="avatar">
+      <img src="user_avatar.jpg">
+    </div>
+    <div class="username">
+      <%= post.user.username %>
+    </div>
+  </div>
+    <%= image_tag post.image_url %>
+  <div class="description">
+    <%= post.description %>
+  </div>
+  </section>
+  <% end %>
+</div>
+
 
 <% end %>
