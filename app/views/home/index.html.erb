@@ -8,32 +8,33 @@
 <div class="form-group" >
   <%= f.file_field :image %>
 </div> 
-
-<!--<div class="form-group" >
-  <%= f.text_field :user_id, value: current_user.id, class:"d_none" %>
-</div> -->
-
-<br />
+  <%= f.hidden_field :user_id, value: current_user.id, class: 'd_none' %>
 
 <div class="text-center">
   <%= f.submit 'Create Post', class: 'btn btn-primary' %>
 </div>
 
+<br />
+
 <div class="posts">
-  <% @posts.each do |p| %>
+  <% @posts.each do |post| %>
   <section class="post" >
+
     <div class="user">
-    <div class="avatar">
-      <img src="user_avatar.jpg">
+      <div class="avatar">
+	<img src="user_avatar.jpg">
+      </div>
+      <div class="username">
+	<%= post.user.username %>
+      </div>
     </div>
-    <div class="username">
-      <%= post.user.username %>
+
+    <%=image_tag post.image_url, class: 'main-image'%>
+
+    <div class="description">
+      <%= post.description %>
     </div>
-  </div>
-    <%= image_tag post.image_url %>
-  <div class="description">
-    <%= post.description %>
-  </div>
+    
   </section>
   <% end %>
 </div>

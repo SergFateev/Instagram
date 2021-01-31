@@ -16,10 +16,8 @@
 	</a>
       </div>
       
-      <ul class="posts">
-	<li>12 posts</li>
-	<li>12 followers</li>
-	<li>12 following</li>
+      <ul class="posts"><ul class="posts">
+	  <li><span><%= @posts.count %></span> posts</li>
       </ul>
       
       <h2 class="name"><%= current_user.name %> </h2>
@@ -31,10 +29,17 @@
     <a class="tab active" href="">
       <i class="fa fa-th"></i>
       POSTS
+      <div class="user-images">
+	<% @posts.each do |post|%>
+	<div class="wrapper">
+	  <%=image_tag post.image_url %>
+	</div>
+      <% end %>
+      </div>
+    
     </a>
     <a class="tab" href="">
-      <i class="fa fa-tv"></i>
-      IGTV
+      <i class="fa fa-tv"></i> IGTV
     </a>
     <a class="tab" href="">
       <i class="fa fa-bookmark"></i>
@@ -44,7 +49,8 @@
       <i class="fa fa-tag"></i>
       TAGGED
     </a>
-    
+
+
 </div>
 
   
