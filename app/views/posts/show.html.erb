@@ -6,17 +6,25 @@
     <div class="col-md-4">
       <div class="user">
 	<div class="avatar">
-          <!-- <% if @post.user.avatar.attached? %> -->
-           <%= link_to user_path(@post.user) do %>
-             <%= image_tag @post.user.avatar %>
-            <% end %>
-          <!-- <% end %> -->
+           <% if @post.user.image_url != "/placeholders/missing.jpg" %> 
+            <%= link_to user_path(@post.user) do %>
+              <%= image_tag @post.user.image_url %>
+             <% end %>
+           <% end %>
+	</div>	   
       </div>
       <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
-    </div>
-    <div class="description">
-      <%= @post.description %>
+      <div class="delete">
+
+	<%= link_to 'Remove', post_path(@post), method: :delete, data:
+	    {confirm: 'Are you sure?' } %>
+
+      </div>
+
     </div>
   </div>
-</div>
+  <div class="description">
+    <%= @post.description %>
+  </div>
+
 </div>

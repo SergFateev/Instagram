@@ -22,10 +22,14 @@
 
     <div class="user">
       <div class="avatar">
-	<img src="user_avatar.jpg">
+	<% if current_user.image_url != "missing.jpg" %>
+  	 <%= link_to user_path(post.user) do %>
+	    <%=image_tag post.user.image_url, class: "avatar"%>
+	  <% end %>
+        <% end %>
       </div>
       <div class="username">
-	<%= post.user.username %>
+	<%= link_to post.user.username, user_path(post.user) %>
       </div>
     </div>
 

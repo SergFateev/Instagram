@@ -8,8 +8,12 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require jquery3
-require popper
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require tree
+//= require jquery3
+//= require popper
 require "../../../node_modules/node-sass/src/libsass/script/bootstrap"
 
 

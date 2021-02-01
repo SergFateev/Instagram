@@ -4,7 +4,9 @@
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-	<img src="">
+	<% if current_user.image_url != "missing.jpg" %>
+	  <%=image_tag current_user.image_url, class: "avatar"%>
+	<% end %>
       </div>
     </div>
 
@@ -29,10 +31,10 @@
     <a class="tab active" href="">
       <i class="fa fa-th"></i>
       POSTS
-    
     </a>
     <a class="tab" href="">
-      <i class="fa fa-tv"></i> IGTV
+      <i class="fa fa-tv"></i>
+      IGTV
     </a>
     <a class="tab" href="">
       <i class="fa fa-bookmark"></i>
