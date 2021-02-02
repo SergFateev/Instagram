@@ -4,7 +4,9 @@
 
 .post-show{
     margin: 30px 5px 0;
-    border: 0px solid #dbdbdb;  
+    .row {
+	border: 1px solid #dbdbdb;
+    }
     .col-md-8{
 	padding: 0;
 	.image{

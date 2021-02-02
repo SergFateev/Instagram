@@ -7,7 +7,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    if user_signed_in?   
+      @post = Post.find(params[:id])
+    else
+      redirect_to new_user_session_path
+    end 
   end
     
   def destroy

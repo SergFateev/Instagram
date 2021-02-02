@@ -14,7 +14,7 @@ require("channels")
 //= require tree
 //= require jquery3
 //= require popper
-require "../../../node_modules/node-sass/src/libsass/script/bootstrap"
+require ("../../../node_modules/node-sass/src/libsass/script/bootstrap")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
