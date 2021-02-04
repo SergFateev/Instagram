@@ -1,0 +1,22 @@
+      <div class="comments">
+	<% @post.comments.each do |comment|%>
+	  <%= comment.content %>
+	<% end %>
+      </div>
+
+      <br />
+
+      <%= form_for Comment.new do |f| %>
+
+      <div class="form-group" >
+      	<label> Comment: </label>
+      	<%= f.text_field :content %>
+      </div>
+
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :post_id, value: current_post.id %>
+      
+      <div class="text-center">
+      	<%= f.submit 'Add Comment', class: 'btn btn-primary' %>
+      </div>
+      <% end %>

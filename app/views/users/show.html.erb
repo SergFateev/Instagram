@@ -4,9 +4,7 @@
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-	<% if current_user.image_url != "missing.jpg" %>
-	  <%=image_tag current_user.image_url, class: "avatar"%>
-	<% end %>
+	<%=image_tag current_user.image_url, class: "avatar"%>
       </div>
     </div>
 
@@ -32,25 +30,12 @@
       <i class="fa fa-th"></i>
       POSTS
     </a>
-    <a class="tab" href="">
-      <i class="fa fa-tv"></i>
-      IGTV
-    </a>
-    <a class="tab" href="">
-      <i class="fa fa-bookmark"></i>
-      SAVED
-    </a>
-    <a class="tab" href="">
-      <i class="fa fa-tag"></i>
-      TAGGED
-    </a>
-
-</div>
+  </div>
 
   <div class="user-images">
   <% @posts.each do |post|%>
     <div class="wrapper">
-      <%=link_to post_path(post) do %>
+      <%=link_to user_post_path(@user,  post) do %>
         <%=image_tag post.image_url %>
       <% end %>
     </div>

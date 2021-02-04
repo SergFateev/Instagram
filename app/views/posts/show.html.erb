@@ -6,21 +6,21 @@
     <div class="col-md-4">
       <div class="user">
 	<div class="avatar">
-           <% if @post.user.image_url != "/placeholders/missing.jpg" %> 
-            <%= link_to user_path(@post.user) do %>
-              <%= image_tag @post.user.image_url %>
-             <% end %>
-           <% end %>
+          <%= link_to user_path(@post.user) do %>
+            <%= image_tag @post.user.image_url %>
+          <% end %>
 	</div>	   
       </div>
       <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
       <div class="delete">
 
-	<%= link_to 'Remove', post_path(@post), method: :delete, data:
+	<%= link_to 'Remove', user_post_path(@post), method: :delete, data:
 	    {confirm: 'Are you sure?' } %>
 
       </div>
+      <br />
 
+       
     </div>
   </div>
   <div class="description">
@@ -28,3 +28,8 @@
   </div>
 
 </div>
+
+
+
+
+
