@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :show, :destroy]
-  before_action :load_user
   
   def create
     Post.create(post_params)
@@ -9,12 +8,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    if user_signed_in?   
-      @post = Post.find(params[:id])
-      @comment = @post.comments.order(created_at: :desc)
-    else
-      redirect_to new_user_session_path
-    end 
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    redirect_to post_path(@post)
   end
     
   def destroy
@@ -25,10 +23,6 @@ class PostsController < ApplicationController
   end
 
   private
-
-  def load_user
-    @user = User.find(params[:user_id])
-  end
 
   def post_params
     params.require(:post).permit(:description, :user_id, :image)

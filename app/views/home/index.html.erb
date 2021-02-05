@@ -1,4 +1,4 @@
-<%= form_with(model: [@users], local: true) do |f| %>
+<%= form_with(model: [Post.new], local: true) do |f| %>
 
 <div class="form-group" >
   <label> Description </label>
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <%=link_to user_post_path(@users, post) do %>
+    <%=link_to post_path(post) do %>
       <%=image_tag post.image_url, class:"main-image"%>
     <% end %>
     

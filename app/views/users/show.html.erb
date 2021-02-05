@@ -4,13 +4,13 @@
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-	<%=image_tag current_user.image_url, class: "avatar"%>
+	<%=image_tag @user.image_url, class: "avatar"%>
       </div>
     </div>
 
     <div class="col-md-8 basic-info">
       <div class="user-wrapper">
-	<h2 class="username"><%= current_user.username %></h2>
+	<h2 class="username"><%= @user.username %></h2>
 	<a class="edit-profile" href="<%= edit_user_path(current_user) %>">
 	  <button>Edit Profile</button>
 	</a>
@@ -20,7 +20,7 @@
 	  <li><span><%= @posts.count %></span> posts</li>
       </ul>
       
-      <h2 class="name"><%= current_user.name %> </h2>
+      <h2 class="name"><%= @user.name %> </h2>
       
     </div>
   </div>
@@ -35,7 +35,7 @@
   <div class="user-images">
   <% @posts.each do |post|%>
     <div class="wrapper">
-      <%=link_to user_post_path(@user,  post) do %>
+      <%=link_to post_path(post) do %>
         <%=image_tag post.image_url %>
       <% end %>
     </div>

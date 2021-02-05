@@ -2,13 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :edit, :update]
   
   def show
-    if user_signed_in?   
-      @user = User.find(params[:id])
-      @posts = @user.posts.order(created_at: :desc)
-    else
-      redirect_to new_user_session_path
-    end 
-
+    @user = User.find(params[:id])
+    @posts = @user.posts.order(created_at: :desc)
   end
 
   def edit

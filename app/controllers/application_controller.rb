@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(user)
-    user_posts_path(user)
+    user_path(user)
   end
   
 end
