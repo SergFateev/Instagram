@@ -30,7 +30,8 @@
 
       <br />
 
-      <%= form_with model: [@post, @post.comments.build] do |f| %>      
+      <%= form_with model: [@post, Comment.new] do |f| %>
+      
       <div class="form-group-comment" >
       	<label> Comment: </label>
       	<%= f.text_field :content %>
