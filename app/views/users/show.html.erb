@@ -16,10 +16,20 @@
 	</a>
       </div>
       
-      <ul class="posts"><ul class="posts">
-	  <li><span><%= @posts.count %></span> posts</li>
+      <ul class="posts">
+	<li><span><%= @posts.count %></span> posts</li>
       </ul>
-      
+      <a class="following">
+          <%= link_to "Followings", user_followings_path(user_id: @user.id, follower_id: @followings)%>
+      <a/>
+      <t/>
+      <a class="follow">
+	<% if current_user.present? && current_user != @user %>
+	  <%= link_to("Follow", follows_path(following_id: @user.id), method: :post)%>
+	<% end %>
+    </a>
+
+      <br />
       <h2 class="name"><%= @user.name %> </h2>
       
     </div>
