@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :devise_parameter_sanitizer, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
   private
 
   def authenticate_user!

@@ -22,6 +22,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
    
   validates :email, presence: true, uniqueness: true
-  validates :name, presence: true
- 
+  validates :username, presence: true
+
 end
